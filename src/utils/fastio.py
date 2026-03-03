@@ -36,7 +36,7 @@ def read(path:str, insure_2d:bool=True, target_sampling_rate=None, logger=None)-
 
     if signal is None:
         try:
-            signal, sampling_rate = sf.read(path)
+            signal, sampling_rate = sf.read(path, dtype='float32')
         except Exception as e:
             if logger:
                 logger.warning(f"soundfile failed to read {path} with error {e}")
